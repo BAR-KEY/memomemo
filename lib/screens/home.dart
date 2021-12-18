@@ -14,28 +14,44 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-          ],
-        ),
+      body: ListView(
+        physics: const BouncingScrollPhysics(),
+        children: [
+          Row(
+            children: const [
+              Padding(
+                  padding: EdgeInsets.only(
+                    left: 20,
+                    top: 20,
+                    bottom: 20,
+                  ),
+                  child: Text('메모메모',
+                      style: TextStyle(fontSize: 36, color: Colors.blue))),
+            ],
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-              context, CupertinoPageRoute(builder: (context) => EditPage()));
+          Navigator.push(context,
+              CupertinoPageRoute(builder: (context) => const EditPage()));
         },
         tooltip: '노트를 추가하려면 클릭하세요',
-        child: Icon(Icons.add),
-        // label: Text('메모 추가'),
+        child: const Icon(Icons.add),
       ),
     );
   }
+
+//   List<Widget> LoadMemo() {
+//     List<Widget> memoList = [];
+//     memoList.add(Container(
+//       color: Colors.purple,
+//       height: 200,
+//     ));
+//     memoList.add(Container(
+//       color: Colors.red,
+//       height: 200,
+//     ));
+//     return memoList;
+//   }
 }
