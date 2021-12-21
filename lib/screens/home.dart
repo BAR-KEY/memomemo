@@ -33,25 +33,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(context,
-              CupertinoPageRoute(builder: (context) => const EditPage()));
+          Navigator.push(
+              context, CupertinoPageRoute(builder: (context) => EditPage()));
         },
         tooltip: '노트를 추가하려면 클릭하세요',
         child: const Icon(Icons.add),
       ),
     );
   }
-
-//   List<Widget> LoadMemo() {
-//     List<Widget> memoList = [];
-//     memoList.add(Container(
-//       color: Colors.purple,
-//       height: 200,
-//     ));
-//     memoList.add(Container(
-//       color: Colors.red,
-//       height: 200,
-//     ));
-//     return memoList;
-//   }
 }
